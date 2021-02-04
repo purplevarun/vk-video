@@ -95,3 +95,27 @@ const setUnmute = () => {
     const html = `<img id="rupali" src="mute.png" width="40px"height="40px"><span>Unmute</span>`;
     document.querySelector('.MUTE_BTN').innerHTML = html;
 };
+
+const playstop = () => {
+    let enabled = myVideoStream.getVideoTracks()[0].enabled;
+    if (enabled) {
+        myVideoStream.getVideoTracks()[0].enabled = false;
+        setPlay();
+    }
+    else {
+        setStop();
+        myVideoStream.getVideoTracks()[0].enabled = true;
+    }
+};
+
+const setPlay = () => {
+    const html = `<img id = "rupali" src="stop.svg" width="40px" height="40px">
+    <span>Allow Video</span>`;
+    document.querySelector('.VID_STOP').innerHTML = html;
+}
+
+const setStop = () => {
+    const html = `<img id = "rupali" src="stop.svg" width="40px" height="40px">
+    <span>Disable Video</span>`;
+    document.querySelector('.VID_STOP').innerHTML = html;
+}
