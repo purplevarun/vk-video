@@ -86,4 +86,12 @@ const muteUnmute = () => {
         setMute();
         myVideoStream.getAudioTracks()[0].enabled = true;
     }
-}
+};
+const setMute = () => {
+    const html = `<img id="rupali" src="mute.png" width="40px"height="40px"><span>Mute</span>`;
+    document.querySelector('.MUTE_BTN').innerHTML = html;
+};
+const setUnmute = () => {
+    const html = `<img id="rupali" src="mute.png" width="40px"height="40px"><span>Unmute</span>`;
+    document.querySelector('.MUTE_BTN').innerHTML = html;
+};
