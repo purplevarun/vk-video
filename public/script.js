@@ -29,6 +29,22 @@ navigator.mediaDevices.getUserMedia({
         connectToNewUser(userId,stream);
     });
     
+
+    let text = $('input')
+
+    $('html').keydown(e => {
+        if (e.which == 13 && text.val().length !== 0) {
+            
+            socket.emit("MSG", text.val());
+            text.val('');
+        }
+    });
+
+    socket.on("CRTMSG",message => {
+        console.log("from server = ",message);
+        $('.messages').append(`<li class = "message"><b>user</b><br/>${message}</li>`);
+        scrollToBottom();
+    }); 
     
 });
 peer.on("open",id => {
@@ -49,16 +65,12 @@ const addVideoStream = (video,stream) => {
     video.srcObject = stream;
     video.addEventListener('loadedmetadata', () =>{
         video.play();
-    })
+    });
     videoGrid.append(video);
-}
+};
 
-let text = $('input')
-$('html').keydown(e => {
-    if (e.which == 13 && text.val().length !== 0) {
-        console.log(text.val());
-        socket.emit('message', text.val());
-        text.val('');
-    }
-})
+const scrollToBottom = () => {
+    var d = $('.main__chat__window');
+    d.scrollTop(d.prop("scrollHeight"));
+};
 

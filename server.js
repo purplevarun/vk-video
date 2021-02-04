@@ -21,6 +21,13 @@ io.on("connection",socket => {
     socket.on("join-room",(roomId,userId) => {
         socket.join('roomId');
         socket.to('roomId').broadcast.emit('user-connected', userId);
-    });
-});
+        
+        socket.on('MSG',message => {
+            console.log(message);
+            io.to('roomId').emit("CRTMSG",message);
+        })
+
+    })
+})
+
 server.listen(PORT);
