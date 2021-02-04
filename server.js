@@ -2,4 +2,7 @@ const express = require("express");
 const app = express();
 const server = require("http").Server(app);
 
-server.listen(2400);
+app.get('/', function (req, res) {
+    res.send('<h1>hello world</h1>')
+});
+server.listen(3000);
