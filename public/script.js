@@ -1,4 +1,3 @@
-const PORT = 3000;
 const socket = io();
 const videoGrid = document.getElementById('video-grid');
 console.log(videoGrid);
@@ -7,7 +6,8 @@ myVideo.muted = true;
 var peer = new Peer(undefined, {
     path: '/peerjs',
     host : '/',
-    port : `${PORT}`
+    // port : 3000 // for debug ie localhost
+    port : 443
 });
 let myVideoStream;
 navigator.mediaDevices.getUserMedia({
