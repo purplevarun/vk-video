@@ -42,15 +42,34 @@ video {
 }
 .main__control__block {
     display: flex;
+    margin: auto;
 }
 .main__control__button {
     display: flex;
     flex-direction: column;
-    /* padding: 10px; */
-    margin-right: 10px;
+    padding: 10px;
+    margin-right: 20px;
+    border-radius: 20px;
     /* background-color: teal; */
+}
+.main__control__button:hover {
+    background-color: grey;
 }
 #rupali{
     display:block;
     margin:auto;
+}
+span {
+    text-align: center;
+}
+.daali {
+    color :white;
+    position: absolute;
+    font-size: 15px;
+    bottom: 0px;
+}
+.daali2 {
+    text-decoration: none;
+    color:red;
+    font-family: cursive;
 }
