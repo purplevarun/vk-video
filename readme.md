@@ -1,5 +1,2 @@
-## install these : 
-1. express 
-2. ejs 
-3. uuid 
-4. socket.io 
+# video chat application
+## uses : peer to peer connection and websockets

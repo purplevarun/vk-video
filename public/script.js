@@ -14,8 +14,7 @@ navigator.mediaDevices.getUserMedia({
 socket.emit("join-room",ROOM_ID);
 
 socket.on('user-connected',() => {
-    connectToNewUser ();
-    
+    connectToNewUser();
 })
 const connectToNewUser = () => {
     console.log("new user connected by varun");
