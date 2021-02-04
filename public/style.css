@@ -5,6 +5,7 @@ body {
 #video-grid {
     display: flex;
     justify-content: center;
+    max-width: 1100px;
 }
 video {
     height: 400px;
@@ -72,4 +73,25 @@ span {
     text-decoration: none;
     color:red;
     font-family: cursive;
+}
+.main__right {
+    display: flex;
+    flex-direction: column;
+    background-color: #242324;
+    color:whitesmoke;
+    padding: 10px;
+}
+.main__chat__window {
+    flex-grow: 1;
+    /* display:flex; */
+    
+}
+.main__header {
+    color:whitesmoke;
+    text-align: center;
+}
+.main__message__container {
+    padding: 10px;
+    display: flex;
+
 }
