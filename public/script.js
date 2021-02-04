@@ -74,3 +74,16 @@ const scrollToBottom = () => {
     d.scrollTop(d.prop("scrollHeight"));
 };
 
+
+// impt for button
+const muteUnmute = () => {
+    const enabled = myVideoStream.getAudioTracks()[0].enabled;
+    if (enabled) {
+        myVideoStream.getAudioTracks()[0].enabled = false;
+        setUnmute();
+    }
+    else{
+        setMute();
+        myVideoStream.getAudioTracks()[0].enabled = true;
+    }
+}
